@@ -5,9 +5,13 @@ using UnityEngine;
 public class House : MonoBehaviour
 {
 
+    [Header("House Settings")]
+    [SerializeField] private float woodNeeded;
     [SerializeField] private Color startColor;
     [SerializeField] private Color endColor;
     [SerializeField] private float duration;
+
+    [Header("House Components")]
     [SerializeField] private SpriteRenderer houseSprite;
     [SerializeField] private Transform pointer;
     [SerializeField] private GameObject houseCol;
@@ -32,12 +36,14 @@ public class House : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (detectingPlayer && Input.GetKeyDown(KeyCode.E))
+        if (detectingPlayer && Input.GetKeyDown(KeyCode.E)&& playerItems.currentWood >= woodNeeded)
         {
+            //Inicio da construção
             building = true;
             playerAnim.OnHammeringStarted();
             houseSprite.color = startColor;
             player.transform.position = pointer.position;
+            playerItems.currentWood -= woodNeeded;
         }
 
         if (building)
