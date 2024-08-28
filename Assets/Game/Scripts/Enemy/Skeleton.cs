@@ -33,7 +33,17 @@ public class Skeleton : MonoBehaviour
             //skeleton anda
             animationControl.PlayAnim(1);
 
+        }
 
+        float posx = player.transform.position.x - transform.position.x;
+
+        if (posx>0)
+        {
+            transform.eulerAngles = new Vector2(0,  0);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector2(0, 180);
         }
     }
 }
