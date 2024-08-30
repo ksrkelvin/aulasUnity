@@ -6,10 +6,18 @@ using UnityEngine;
 public class PlayerAnim : MonoBehaviour
 {
 
+    [Header("Atack Settings")]
+    [SerializeField]private Transform atackPoint;
+    [SerializeField]private float radius;
+    [SerializeField]private LayerMask enemyLayer;
+
 
     private Player player;
     private Animator anim;
     private Casting casting;
+    private bool isHurting;
+    private float recoveryTime = 1.5f;
+    private float timeCount;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +36,16 @@ public class PlayerAnim : MonoBehaviour
        OnDigging();
        OnWatering();
 
+
+        if (isHurting)
+        {
+            timeCount += Time.deltaTime;
+            if (timeCount >= recoveryTime)
+            {
+                isHurting = false;
+                timeCount = 0f;
+            }
+        }
     }
 
     #region Movement
@@ -119,4 +137,33 @@ public class PlayerAnim : MonoBehaviour
         player.isPaused = false;
         anim.SetBool("isHammering", false);
     }
+
+
+#region Atack
+    public void OnHit(){
+        if (!isHurting)
+        {
+           anim.SetTrigger("hit");
+           isHurting = true;
+        }        
+    }
+
+    public void OnAtack()
+    {
+        Collider2D hit = Physics2D.OverlapCircle(atackPoint.position,radius,enemyLayer);
+
+        if (hit != null)
+        {
+            //Acerta o inimigo
+            hit.GetComponentInChildren<AnimationControl>().OnHit();
+         
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(atackPoint.position, radius);
+    }
+#endregion
+    
 }

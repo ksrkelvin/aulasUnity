@@ -137,20 +137,19 @@ public class Player : MonoBehaviour
         rig.MovePosition(rig.position + _direction * speed * Time.fixedDeltaTime);
     
     }
-    
-        void OnAction(){
+    void OnAction(){
         switch (handlingObj)
-        {
-            case 0:
-                OnCutting();
-                break;
-            case 1:
-                OnDigging();
-                break;
-            case 2:
-                OnWatering();
-                break;
-        }
+            {
+                case 0:
+                    OnCutting();
+                    break;
+                case 1:
+                    OnDigging();
+                    break;
+                case 2:
+                    OnWatering();
+                    break;
+            }
     }
 
     void OnRun()
@@ -214,7 +213,7 @@ public class Player : MonoBehaviour
             speed = 0;
             isWatering = true;
         }
-        if (Input.GetMouseButtonUp(0) || playerItems.currentWater <= 0)
+        if (Input.GetMouseButtonUp(0) || playerItems.currentWater < 0)
         {
             speed = initialSpeed;
             isWatering = false;

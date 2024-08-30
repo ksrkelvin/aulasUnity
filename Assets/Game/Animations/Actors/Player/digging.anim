@@ -31,7 +31,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.16666667
+        time: 0.25
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -40,7 +40,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.44444445
+        time: 0.6666667
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -61,36 +61,36 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 652055403, guid: fbac0886061fe607d880db1966264092, type: 3}
-    - time: 0.055555556
+    - time: 0.083333336
       value: {fileID: 29029586, guid: fbac0886061fe607d880db1966264092, type: 3}
-    - time: 0.11111111
-      value: {fileID: 1220118546, guid: fbac0886061fe607d880db1966264092, type: 3}
     - time: 0.16666667
+      value: {fileID: 1220118546, guid: fbac0886061fe607d880db1966264092, type: 3}
+    - time: 0.25
       value: {fileID: -1094418518, guid: fbac0886061fe607d880db1966264092, type: 3}
-    - time: 0.22222222
-      value: {fileID: -1773536604, guid: fbac0886061fe607d880db1966264092, type: 3}
-    - time: 0.2777778
-      value: {fileID: 1747537354, guid: fbac0886061fe607d880db1966264092, type: 3}
     - time: 0.33333334
-      value: {fileID: -386426739, guid: fbac0886061fe607d880db1966264092, type: 3}
-    - time: 0.3888889
-      value: {fileID: -794821776, guid: fbac0886061fe607d880db1966264092, type: 3}
-    - time: 0.44444445
-      value: {fileID: 236360673, guid: fbac0886061fe607d880db1966264092, type: 3}
+      value: {fileID: -1773536604, guid: fbac0886061fe607d880db1966264092, type: 3}
+    - time: 0.41666666
+      value: {fileID: 1747537354, guid: fbac0886061fe607d880db1966264092, type: 3}
     - time: 0.5
-      value: {fileID: -1184476990, guid: fbac0886061fe607d880db1966264092, type: 3}
-    - time: 0.5555556
-      value: {fileID: -1860063411, guid: fbac0886061fe607d880db1966264092, type: 3}
-    - time: 0.6111111
-      value: {fileID: 694408884, guid: fbac0886061fe607d880db1966264092, type: 3}
+      value: {fileID: -386426739, guid: fbac0886061fe607d880db1966264092, type: 3}
+    - time: 0.5833333
+      value: {fileID: -794821776, guid: fbac0886061fe607d880db1966264092, type: 3}
     - time: 0.6666667
+      value: {fileID: 236360673, guid: fbac0886061fe607d880db1966264092, type: 3}
+    - time: 0.75
+      value: {fileID: -1184476990, guid: fbac0886061fe607d880db1966264092, type: 3}
+    - time: 0.8333333
+      value: {fileID: -1860063411, guid: fbac0886061fe607d880db1966264092, type: 3}
+    - time: 0.9166667
+      value: {fileID: 694408884, guid: fbac0886061fe607d880db1966264092, type: 3}
+    - time: 1
       value: {fileID: -134493266, guid: fbac0886061fe607d880db1966264092, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 18
+  m_SampleRate: 12
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -134,7 +134,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.72222227
+    m_StopTime: 1.0833334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -164,7 +164,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.16666667
+        time: 0.25
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -173,7 +173,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.44444445
+        time: 0.6666667
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -192,4 +192,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.16666667
+    functionName: PlayerSFX
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: bf5e69ef004213d4d965ff1468285733, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

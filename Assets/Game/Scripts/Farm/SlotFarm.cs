@@ -18,6 +18,12 @@ public class SlotFarm : MonoBehaviour
     private float currentWater;
     private bool dugHole;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip holeSFX;
+    [SerializeField] private AudioClip carrotSFX;
+
+    private bool canCollect;
     PlayeItems playerItems;
 
     void Awake()
@@ -39,12 +45,15 @@ public class SlotFarm : MonoBehaviour
                 currentWater += 0.1f;
             }
 
-            if (currentWater >= waterAmount)
+            if (currentWater >= waterAmount && !canCollect)
             {
+
+                canCollect = true;
+                audioSource.PlayOneShot(holeSFX);
                 spriteRenderer.sprite = carrot;
-                OnCollect();
 
             }
+            OnCollect();
         }
       
         
@@ -65,13 +74,16 @@ public class SlotFarm : MonoBehaviour
 
     void OnCollect()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && canCollect)
         {
+            
             if (playerItems.currentCarrots < playerItems.totalCarrotLimit)
             {
-               playerItems.GetCarrot(1);
+                audioSource.PlayOneShot(carrotSFX);
+                playerItems.GetCarrot(1);
                 spriteRenderer.sprite = hole;
                 currentWater = 0;
+                
             }
         }
     }
