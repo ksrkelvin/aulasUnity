@@ -18,7 +18,7 @@ public class SlotFarm : MonoBehaviour
     private float currentWater;
     private bool dugHole;
 
-    [Header("Audio")]
+    [Header("Audio Settings")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip holeSFX;
     [SerializeField] private AudioClip carrotSFX;
@@ -53,7 +53,7 @@ public class SlotFarm : MonoBehaviour
                 spriteRenderer.sprite = carrot;
 
             }
-            OnCollect();
+            OnCollect(); 
         }
       
         
